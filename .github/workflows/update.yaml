@@ -7,15 +7,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
-      matrix:
-        flutter-channel: ['stable', 'beta']
     steps:
       - uses: actions/checkout@v3
 
       - uses: subosito/flutter-action@v2
         with:
-          channel: ${{ matrix.flutter-channel }}
+          channel: stable
           cache: true
 
       - name: Install Dependencies
