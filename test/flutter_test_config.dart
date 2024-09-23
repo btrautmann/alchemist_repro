@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   TestWidgetsFlutterBinding.ensureInitialized();
-  const isRunningInCi = bool.fromEnvironment('CI');
+  const isRunningInCi = bool.fromEnvironment('GITHUB_ACTIONS');
 
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig.current().copyWith(
